@@ -1,25 +1,18 @@
 const groupFileSize = require('../../lib/group-file-size/group-file-size');
-const path = require('path');
+const getDummyFiles = require('../files/get-dummy-files');
 
 describe('Group File Size', () => {
     it('should return an array of file pathes grouped by file sizes', () => {
-        const fakeFilepathes = [
-            path.join('tests', 'group-file-size', 'group-file-size-dummy-1.dummy'),
-            path.join('tests', 'group-file-size', 'group-file-size-dummy-2.dummy'),
-            path.join('tests', 'group-file-size', 'group-file-size-dummy-3.dummy'),
-            path.join('tests', 'group-file-size', 'group-file-size-dummy-4.dummy'),
-        ];
-
-        expect(groupFileSize(fakeFilepathes)).toEqual([
+        expect(groupFileSize(getDummyFiles)).toEqual([
             [
-                fakeFilepathes[0],
-                fakeFilepathes[1],
+                getDummyFiles[0],
+                getDummyFiles[1],
             ],
             [
-                fakeFilepathes[2],
+                getDummyFiles[2],
             ],
             [
-                fakeFilepathes[3],
+                getDummyFiles[3],
             ],
         ]);
     });
