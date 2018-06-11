@@ -1,5 +1,5 @@
-const deleteDuplicatesFactory = require('../../lib/delete-duplicates/delete-duplicates');
-const getDummyFiles = require('../files/get-dummy-files');
+const deleteDuplicatesFactory = require('../lib/delete-duplicates');
+const getDummyFiles = require('./files/get-dummy-files');
 
 describe('Delete Duplicates', () => {
     it('should delete correct file paths', () => {

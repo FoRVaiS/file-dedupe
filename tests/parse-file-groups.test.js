@@ -1,5 +1,5 @@
-const parseFileGroupsFactory = require('../../lib/parse-file-groups/parse-file-groups');
-const getDummyFiles = require('../files/get-dummy-files');
+const parseFileGroupsFactory = require('../lib/parse-file-groups');
+const getDummyFiles = require('./files/get-dummy-files');
 
 describe('Parse File Groups', () => {
     it('should return unique and duplicate files', () => {
