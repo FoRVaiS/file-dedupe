@@ -1,6 +1,6 @@
 {
   "name": "@forvais/file-dedupe",
-  "description": "Dedupe files with their MD5 hash",
+  "description": "Dedupe files based on their file size and MD5 hash. Sub-directory support included",
   "version": "1.0.0",
   "author": "FöRVaiS <forvais@nebulous.pw>",
   "bugs": {
