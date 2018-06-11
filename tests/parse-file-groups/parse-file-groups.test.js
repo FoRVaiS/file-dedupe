@@ -22,13 +22,13 @@ describe('Parse File Groups', () => {
         ];
 
         expect(parseFileGroups(fakeFileGroups)).toEqual({
-            unique: [
+            uniques: [
                 getDummyFiles[0],
                 getDummyFiles[1],
                 getDummyFiles[2],
                 getDummyFiles[3],
             ],
-            duplicate: [
+            duplicates: [
                 getDummyFiles[4],
             ],
         });
