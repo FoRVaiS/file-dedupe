@@ -1,7 +1,7 @@
 {
   "name": "@forvais/file-dedupe",
   "description": "Dedupe files with their MD5 hash",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "FöRVaiS <forvais@nebulous.pw>",
   "bugs": {
     "url": "https://github.com/FoRVaiS/file-dedupe/issues"
