@@ -28,9 +28,11 @@ describe('Parse File Groups', () => {
                 getDummyFiles[2],
                 getDummyFiles[3],
             ],
-            duplicates: [
-                getDummyFiles[4],
-            ],
+            duplicates: {
+                cfcd208495d565ef66e7dff9f98764da: [
+                    getDummyFiles[4],
+                ],
+            },
         });
     });
 });
