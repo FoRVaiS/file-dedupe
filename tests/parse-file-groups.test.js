@@ -1,7 +1,7 @@
 const parseFileGroupsFactory = require('../lib/parse-file-groups');
 const getDummyFiles = require('./files/get-dummy-files');
 
-describe('Parse File Groups', () => {
+describe.only('Parse File Groups', () => {
     it('should return unique and duplicate files', () => {
         const parseFileGroups = parseFileGroupsFactory({
 
@@ -12,6 +12,7 @@ describe('Parse File Groups', () => {
                 getDummyFiles[0],
                 getDummyFiles[1],
                 getDummyFiles[4],
+                getDummyFiles[5],
             ],
             [
                 getDummyFiles[2],
@@ -31,6 +32,7 @@ describe('Parse File Groups', () => {
             duplicates: {
                 cfcd208495d565ef66e7dff9f98764da: [
                     getDummyFiles[4],
+                    getDummyFiles[5],
                 ],
             },
         });
