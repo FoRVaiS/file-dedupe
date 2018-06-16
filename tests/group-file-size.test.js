@@ -8,6 +8,7 @@ describe('Group File Size', () => {
                 getDummyFiles[0],
                 getDummyFiles[1],
                 getDummyFiles[4],
+                getDummyFiles[5],
             ],
             [
                 getDummyFiles[2],
