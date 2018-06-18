@@ -13,7 +13,7 @@ describe('Signature Processing', () => {
 
     describe('Single Target Directory', () => {
         describe('Exclusions', () => {
-            const fakeDirectory = 'path/to/file';
+            const fakeTarget = 'path/to/file';
             const fakeExclusions = ['ignore/directory1', 'ignore/file2.txt'];
             const fakeOptions = { option1: false };
 
@@ -24,23 +24,23 @@ describe('Signature Processing', () => {
             });
 
             it('should run checks against target', () => {
-                signatureProcessing(fakeRun)(fakeDirectory);
+                signatureProcessing(fakeRun)(fakeTarget);
 
-                expect(fakeRun.mock.calls[0][0]).toEqual(fakeDirectory);
+                expect(fakeRun.mock.calls[0][0]).toEqual(fakeTarget);
             });
 
             it('should be able to tell if no exclusions were passed in', () => {
-                signatureProcessing(fakeRun)(fakeDirectory, fakeOptions);
+                signatureProcessing(fakeRun)(fakeTarget, fakeOptions);
 
                 expect(fakeRun.mock.calls[0]).toEqual([
-                    fakeDirectory,
+                    fakeTarget,
                     [],
                     fakeOptions,
                 ]);
             });
 
             it('should exclude specified paths', () => {
-                signatureProcessing(fakeRun)(fakeDirectory, fakeExclusions);
+                signatureProcessing(fakeRun)(fakeTarget, fakeExclusions);
 
                 expect(fakeRun.mock.calls[0][1]).toEqual(fakeExclusions);
             });
