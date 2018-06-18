@@ -4,13 +4,12 @@ const groupFileSize = require('../lib/group-file-size');
 const parseFileGroups = require('../lib/parse-file-groups')();
 const removeDuplicates = require('../lib/delete-duplicates')();
 
-module.exports = signatureProcessing(async (directory, excludes, opts = {}) => {
-    const {
-        deleteDuplicates = false,
-    } = opts;
-
-    const files = await readdir(directory, excludes);
-    const fileGroups = groupFileSize(files);
+module.exports = signatureProcessing(async (source, target, excludes, {
+    deleteDuplicates = false,
+}) => {
+    const sourceFiles = source && await readdir(source, [target]);
+    const targetFiles = await readdir(target, [...excludes, target]);
+    const fileGroups = groupFileSize(targetFiles, sourceFiles);
     const { uniques, duplicates } = parseFileGroups(fileGroups);
 
     if (deleteDuplicates === true) {
