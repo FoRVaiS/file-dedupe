@@ -8,7 +8,7 @@ module.exports = signatureProcessing(async (source, target, excludes, {
     deleteDuplicates = false,
 }) => {
     const sourceFiles = source && await readdir(source, [target]);
-    const targetFiles = await readdir(target, [...excludes, target]);
+    const targetFiles = await readdir(target, [...excludes, source]);
     const fileGroups = groupFileSize(targetFiles, sourceFiles);
     const { uniques, duplicates } = parseFileGroups(fileGroups);
 
