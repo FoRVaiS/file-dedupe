@@ -10,11 +10,13 @@ describe('Delete Duplicates', () => {
         };
 
         const fakeDuplicates = {
-            duplicates: [
-                getDummyFiles[0],
-                getDummyFiles[1],
-                getDummyFiles[2],
-            ],
+            duplicates: {
+                randomMd5: [
+                    getDummyFiles[0],
+                    getDummyFiles[1],
+                    getDummyFiles[2],
+                ],
+            },
         };
 
         const deleteDuplicates = deleteDuplicatesFactory(fakeDependencies);
